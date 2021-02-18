@@ -17,19 +17,22 @@ public class Kazunarabe {
             a[i] = stdIn.nextInt();
             
         }
-
+        Arrays.sort(a);
+        
         if ("y".equals(choice)) {
-            Arrays.sort(a);
+            
             System.out.println("昇順に並び替えます！" + Arrays.toString(a));
         }
 
         else {
+            
             int[] b = new int[n]; //配列を生成
-            for (int i = n; i < n; i--) {
-               b[n - i] = a[i];
+            int maxIndex = n - 1;
+            for (int i = maxIndex ; i >= 0; i--) {
+               b[maxIndex - i] = a[i];
             }
 
-            System.out.println("降順に並び替えます！" + Arrays.toString(a));
+            System.out.println("降順に並び替えます！" + Arrays.toString(b));
         }   
     }
 }
