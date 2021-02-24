@@ -13,10 +13,11 @@ public class Kazunarabe {
     public static final String INVALID_COMMENT = ALERT + "\n不正な値が入力されました！処理を終了します。\n"+ ALERT ;
     static Scanner stdIn = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void kazunarabemethod()  {
+        
         System.out.println(DECORATION + "\n数字並べ替えプログラム\n" + DECORATION);
 
-        // 入力値でsort順を決定する。
+        // 入力値でsort順を決定する。//ここ変えたよ！！！！！！！！！！
         System.out.print("昇順に並べ替えますか？(y/n)==>");
         boolean isNaturalOrder = "y".equals(stdIn.next()); 
         
@@ -30,8 +31,8 @@ public class Kazunarabe {
         // sortさせる数値の入力を保持する。
         for (int i = 0; i < a.length; i++) {
             System.out.print((i + 1) + "つ目==>");
-            a[i] = getInputInt(INVALID_COMMENT);
-            if ((0 > a[i]) || (a[i] > 100)) {
+            a[i] = getInputInt(INVALID_COMMENT);  
+            if ((0 > a[i]) || (a[i] > 100)) {  //数字以外の時エラーになってしまう。エラーメッセージが表示されない。
                 handleError(INVALID_COMMENT);
             }
         }
