@@ -32,7 +32,7 @@ public class China {
 					+ "    " + menuList.get(i).getItemnm() + "･･･" + menuList.get(i).getPrice() + "円【"
 					+ menuList.get(i).getItemdesc() + "】");
 		}
-		// メニュー番号の入力待ち
+		// メニュー番号の入力待ち 
 
 		// int dayno = (now.get(Calendar.DAY_OF_WEEK) +5) % 7;
 		CategoryDto cd = menudaoimpl.recommandedCategory();// CategoryDtoをインスタンス化してる

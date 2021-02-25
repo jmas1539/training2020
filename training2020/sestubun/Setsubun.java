@@ -14,8 +14,8 @@ public class Setsubun {
     private static Person personAt100 = null;
     private static Person personAt200 = null;
 
-    public static void main(String[] args) {
-         /**public static void setsubunmethod() */
+    public static void setsubunmethod() {
+    
         System.out.println(DECORATIONLON_L + "\n数字並べ替えプログラム\n" + DECORATIONLON_L);
         // 処理を続行するかしないかの判断
         System.out.print("今日は節分ですか？(y/n)==>");
@@ -24,42 +24,42 @@ public class Setsubun {
             System.exit(1);
         }
         try {
-        Person[] families = new Person[name.length];
-        for (int i = 0; i < name.length; i++) {
-            System.out.print(name[i] + "の年齢は==>");
-            families[i] = new Person(name[i], stdIn.nextInt());
-            if ((0 > families[i].getAge()) || (families[i].getAge() > 100)) {  //数字以外の時エラーになってしまう。エラーメッセージが表示されない。
-                handleError(INVALID_COMMENT);
-            } 
-        }
-        for (int i = 0; i < name.length; i++) {
-            families[i].sayEatBeans();
-        }
-        int sum = 0;
-        for (int i = 0; i < families.length; i++) {
-            sum = sum + families[i].getAge();
-            if (sum >= 100 && personAt100 == null) {
-                personAt100 = families[i];
+            Person[] families = new Person[name.length];
+            for (int i = 0; i < name.length; i++) {
+                System.out.print(name[i] + "の年齢は==>");
+                families[i] = new Person(name[i], stdIn.nextInt());
+                if ((0 > families[i].getAge()) || (families[i].getAge() > 100)) { // 数字以外の時エラーになってしまう。エラーメッセージが表示されない。
+                    handleError(INVALID_COMMENT);
+                }
             }
-            if (sum >= 200 && personAt200 == null) {
-                personAt200 = families[i];
+            for (int i = 0; i < name.length; i++) {
+                families[i].sayEatBeans();
             }
-        }
-        if (personAt100 == null) {
-            System.out.println("100粒目の豆を食べた人はいません。");
-        } else {
-            System.out.println("100粒目の豆を食べた人は" + personAt100.getName() + "です。");
-        }
-        if (personAt200 == null) {
-            System.out.println("200粒目の豆を食べた人はいません。");
-        } else {
-            System.out.println("200粒目の豆を食べた人は" + personAt200.getName() + "です。");
-        }
-        System.out.println("家族全員で食べた豆の数は" + sum + "粒です。");
+            int sum = 0;
+            for (int i = 0; i < families.length; i++) {
+                sum = sum + families[i].getAge();
+                if (sum >= 100 && personAt100 == null) {
+                    personAt100 = families[i];
+                }
+                if (sum >= 200 && personAt200 == null) {
+                    personAt200 = families[i];
+                }
+            }
+            if (personAt100 == null) {
+                System.out.println("100粒目の豆を食べた人はいません。");
+            } else {
+                System.out.println("100粒目の豆を食べた人は" + personAt100.getName() + "です。");
+            }
+            if (personAt200 == null) {
+                System.out.println("200粒目の豆を食べた人はいません。");
+            } else {
+                System.out.println("200粒目の豆を食べた人は" + personAt200.getName() + "です。");
+            }
+            System.out.println("家族全員で食べた豆の数は" + sum + "粒です。");
 
-    } catch (InputMismatchException e ){
-        handleError(INVALID_COMMENT);
-    }
+        } catch (InputMismatchException e) {
+            handleError(INVALID_COMMENT);
+        }
     }
 
     private static void handleError(String message) {// クラスの中にメソッドを作る際は、メソッド同士は別々で作る。（メソッドの定義の中で別のメソッド定義ができない）
