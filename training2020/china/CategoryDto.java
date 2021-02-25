@@ -5,8 +5,9 @@ package training2020.china;
  **/
 
 public class CategoryDto {
+	private String getMenuno;
 	private String category;
-	private String categorynm;
+	private  String categorynm;
 	private int catflg;
 	private String memo;
 
@@ -23,7 +24,7 @@ public class CategoryDto {
 	}
 
 	public void setCategorynm(String categorynm) {
-		this.categorynm = categorynm;
+		 this.categorynm = categorynm;
 	}
 
 	public int getCatflg() {

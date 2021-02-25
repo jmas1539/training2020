@@ -12,7 +12,6 @@ public class Person {
     public void sayEatBeans(){
         System.out.println( DECORATIONLON_S + name + "は豆を" + age + "粒食べました。" + DECORATIONLON_S );
     }
-
     public int getAge(){
         return age;
     }

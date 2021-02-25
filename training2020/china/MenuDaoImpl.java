@@ -16,12 +16,12 @@ public class MenuDaoImpl implements MenuDao {
 
     /* データベースへの接続、SQLをコンスタントとして定義 */
     /* 実際ユーザIDやパスワード、ホスト名などはプロパティファイルに保持するが、研修のため直書き */
-    private static final String URL = "jdbc:mysql://localhost:3306/freshers_schema?serverTimezone=JST";
+    private static final String URL = "jdbc:mysql://localhost:3306/freshers_schema?serverTimezone=Japan";
     private static final String USER = "root";
-    private static final String PASS = "freshers@2020";
+    private static final String PASS = "ASCE1wmt";
     private static final String SQL1 = "select I.*, C.categorynm from item As I	inner join category As C on I.category = C.category;";
-    private static final String SQL2 = "select * from item where menuno = menuno???;";
-    private static final String SQL3 = "select * from category where weekday(now()) = catflg;";
+    private static final String SQL2 = "select * from item where menuno = ?;";//JDBCのパラメータが欲しい時は「？」で表記する。「？」の個数がパラメータの個数
+    private static final String SQL3 = "select * from category where weekday(now()) = catflg;";//(now()) がMysqlで現在時間を取るための関数
     private static final String SQL4 = "select * from item where category = category???;";
 
     // List is working as a database
@@ -51,7 +51,7 @@ public class MenuDaoImpl implements MenuDao {
 
             // レコードセットをループしてすべての抽出行をItemDtoフィールドにセットする
             while (rs.next()) {
-                ItemDto md = new ItemDto();
+                ItemDto md/**←具体的な商品*/ = new ItemDto();
                 md.setMenuno(rs.getString("menuno"));
                 md.setItemnm(rs.getString("itemnm"));
                 md.setCategory(rs.getString("category"));
@@ -96,7 +96,7 @@ public class MenuDaoImpl implements MenuDao {
 
             /* SQL2実行 */
             ps = conn.prepareStatement(SQL2);
-            ps.setString(1, menuno);
+            ps.setString(1, menuno);//何個目の「？」にmenuの結果を入れるか。（SQL２）の処理内容も確認して。
             rs = ps.executeQuery();
 
             /* 該当商品情報をItemDtoフィールドにセットする */
@@ -139,21 +139,21 @@ public class MenuDaoImpl implements MenuDao {
         ResultSet rs = null;
 
         /* CategoryDtoインスタンス生成 */
-        CategoryDto cd = new CategoryDto();
+        CategoryDto cd = new CategoryDto();//中身は空っぽ
         try {
             // DB接続
             conn = getConnection();
 
             /* SQL3実行 */
             ps = conn.prepareStatement(SQL3);
-            rs = ps.executeQuery();
+            rs = ps.executeQuery();//rsには上のSQL3の結果が入っている。
 
-            /* 該当カテゴリ情報をCategoryDtoフィールドにセットする */
+            /* 該当カテゴリ情報をCategoryDtoフィールドにセットする cdに入れている*/
             if (rs.next()) {
-                cd.setCategory(rs.getString("category"));
-                cd.setCategorynm(rs.getString("categorynm"));
-                cd.setCatflg(rs.getInt("catflg"));
-                cd.setMemo(rs.getString("memo"));
+                cd.setCategory(rs.getString("category"));//cdのCategoryにセットされる
+                cd.setCategorynm(rs.getString("categorynm"));//cdのCategorynmにセットされる
+                cd.setCatflg(rs.getInt("catflg"));//cdのCatflgにセットされる
+                cd.setMemo(rs.getString("memo"));//cdのmemoにセットされる
                 return cd;
 
                 /* 該当なしならNullで復帰 */

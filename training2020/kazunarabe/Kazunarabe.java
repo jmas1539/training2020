@@ -13,7 +13,9 @@ public class Kazunarabe {
     public static final String INVALID_COMMENT = ALERT + "\n不正な値が入力されました！処理を終了します。\n"+ ALERT ;
     static Scanner stdIn = new Scanner(System.in);
 
-    public static void kazunarabemethod()  {
+    public static void main(String[] args) {
+        
+    //public static void kazunarabemethod()  {
         
         System.out.println(DECORATION + "\n数字並べ替えプログラム\n" + DECORATION);
 
