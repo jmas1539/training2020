@@ -7,13 +7,14 @@ public class Setsubun {
     private static final String DECORATIONLON_L = "＊＊＊＊＊＊＊＊＊＊＊＊＊";
     private static final String DECORATIONLON_S = "＊＊＊";
     public static String[] name = { "じいちゃん", "ばあちゃん", "父ちゃん", "母ちゃん", "おれ", "いもうと" };
-    public static final String STOP_COMMENT = DECORATIONLON_S + "\n終了します。\n" + DECORATIONLON_S;
+    public static final String STOP_COMMENT = "終了します。" ;
     public static final String ALERT = "！！！！！！！！！！！！！！！！！！！！";
     public static final String INVALID_COMMENT = ALERT + "\n不正な値が入力されました！処理を終了します。\n" + ALERT;
     public static Scanner stdIn = new Scanner(System.in);
     private static Person personAt100 = null;
     private static Person personAt200 = null;
 
+    //public static void main(String[] args) {
     public static void setsubunmethod() {
     
         System.out.println(DECORATIONLON_L + "\n数字並べ替えプログラム\n" + DECORATIONLON_L);
@@ -21,7 +22,7 @@ public class Setsubun {
         System.out.print("今日は節分ですか？(y/n)==>");
         if (!"y".equals(stdIn.next())) {
             System.out.print(STOP_COMMENT);
-            System.exit(1);
+            System.exit(1);//メインに戻る様にする。
         }
         try {
             Person[] families = new Person[name.length];
@@ -32,11 +33,10 @@ public class Setsubun {
                     handleError(INVALID_COMMENT);
                 }
             }
-            for (int i = 0; i < name.length; i++) {
-                families[i].sayEatBeans();
-            }
+
             int sum = 0;
             for (int i = 0; i < families.length; i++) {
+                families[i].sayEatBeans();
                 sum = sum + families[i].getAge();
                 if (sum >= 100 && personAt100 == null) {
                     personAt100 = families[i];
@@ -64,6 +64,6 @@ public class Setsubun {
 
     private static void handleError(String message) {// クラスの中にメソッドを作る際は、メソッド同士は別々で作る。（メソッドの定義の中で別のメソッド定義ができない）
         System.out.println(message);
-        System.exit(1);// mainに戻らない様Exitで終了する。
+       
     }
 }
