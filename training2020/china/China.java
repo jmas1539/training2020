@@ -16,7 +16,7 @@ public class China {
 	public static void oderChineseFood() {
 		MenuDaoImpl menudaoimpl = new MenuDaoImpl();
 		
-		// メニューリストの表示する。displayMenuList();
+		// メニューリストの表示する。displayMenuList();//
 		System.out.println(DECORATIONLON_L + "\n中華料理注文プログラム\n" + DECORATIONLON_L);
 		System.out.println("いらっしゃいませ。" + DECORATIONLON_S + "メニューリスト" + DECORATIONLON_S);
 		List<ItemDto> menuList = menudaoimpl.getAllMenus();// メニューリストを取ってる。

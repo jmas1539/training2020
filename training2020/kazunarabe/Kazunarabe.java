@@ -34,7 +34,7 @@ public class Kazunarabe {
         for (int i = 0; i < a.length; i++) {
             System.out.print((i + 1) + "つ目==>");
             a[i] = getInputInt(INVALID_COMMENT);
-            if ((0 > a[i]) || (a[i] > 100)) { // 数字以外の時エラーになってしまう。エラーメッセージが表示されない。
+            if ((0 > a[i]) || (a[i] > 100)) { 
                 handleError(INVALID_COMMENT);
             }
         }

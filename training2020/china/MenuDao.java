@@ -11,7 +11,7 @@ public interface MenuDao {
     public List<ItemDto> getAllMenus();
 
     // メニュー番号の商品情報を取得する。
-    // 引数は入力されたメニュー番号を渡せば、商品情報をItemDtoクラス変数で取得することができる。
+    // 引数は入力されたメニュー番号を渡せば、商品情報をItemDtoクラス変数で取得することができる。//
     public ItemDto getMenu(String menuno);
 
     // 本日のおすすめ情報を取得する

@@ -21,7 +21,7 @@ public class Main {
         System.out.println("1:数字並び替えプログラム");
         System.out.println("2:節分アルゴリズムプログラム");
         System.out.println("3:今日の運勢プログラム");
-        System.out.println("4:電気自動車プログラム");
+        System.out.println("4:電気自転車プログラム");
         System.out.println("5:中華料理注文プログラム");
         System.out.println("9:処理終了");
         System.out.print("実行したいプログラム番号を選択してください。（1-5,9）:");
@@ -40,7 +40,7 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.println("準備中");
+                    //Fortune.fortune();
                     break;
 
                 case 4:

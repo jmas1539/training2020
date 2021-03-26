@@ -5,7 +5,7 @@ package training2020.china;
  **/
 
 public class ItemDto {
-	/* ItemDto フィールド：privateを付けて非公開アクセスとして、クラスの外部に対してデータを隠蔽する */
+	/* ItemDto フィールド：privateを付けて非公開アクセスとして、クラスの外部に対してデータを隠蔽する *///
 	private String menuno;
 	private String itemnm;
 	private String category;

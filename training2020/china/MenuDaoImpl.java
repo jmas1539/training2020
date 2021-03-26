@@ -21,7 +21,7 @@ public class MenuDaoImpl implements MenuDao {
     private static final String PASS = "ASCE1wmt";
     private static final String SQL1 = "select I.*, C.categorynm from item As I	inner join category As C on I.category = C.category;";
     private static final String SQL2 = "select * from item where menuno = ?;";//JDBCのパラメータが欲しい時は「？」で表記する。「？」の個数がパラメータの個数
-    private static final String SQL3 = "select * from category where weekday(now()) = catflg;";//(now()) がMysqlで現在時間を取るための関数
+    private static final String SQL3 = "select * from category where weekday(now()) = catflg;";//(now()) がMysqlで現在時間を取るための関数//
     private static final String SQL4 = "select * from item where category = category???;";
 
     // List is working as a database

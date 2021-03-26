@@ -5,11 +5,10 @@ import java.util.Scanner;
 
 public class Setsubun {
     private static final String DECORATIONLON_L = "＊＊＊＊＊＊＊＊＊＊＊＊＊";
-    private static final String DECORATIONLON_S = "＊＊＊";
-    public static String[] name = { "じいちゃん", "ばあちゃん", "父ちゃん", "母ちゃん", "おれ", "いもうと" };
-    public static final String STOP_COMMENT = "終了します。" ;
     public static final String ALERT = "！！！！！！！！！！！！！！！！！！！！";
     public static final String INVALID_COMMENT = ALERT + "\n不正な値が入力されました！処理を終了します。\n" + ALERT;
+    public static String[] name = { "じいちゃん", "ばあちゃん", "父ちゃん", "母ちゃん", "おれ", "いもうと" };
+    public static final String STOP_COMMENT = "終了します。" ;
     public static Scanner stdIn = new Scanner(System.in);
     private static Person personAt100 = null;
     private static Person personAt200 = null;

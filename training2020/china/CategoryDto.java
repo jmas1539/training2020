@@ -2,7 +2,7 @@ package training2020.china;
 
 /**
  ** categoryテーブルの内容を格納するクラス変数と各フィールドのアクセッサを定義
- **/
+ **///
 
 public class CategoryDto {
 	private String getMenuno;
